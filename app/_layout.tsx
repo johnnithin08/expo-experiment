@@ -1,11 +1,14 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
+// import { useFonts, In } from 'expo-font';
+import { Inter_900Black, useFonts } from '@expo-google-fonts/inter';
+import { AmaticSC_400Regular, AmaticSC_700Bold} from '@expo-google-fonts/amatic-sc';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -13,7 +16,9 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    InterBlack: Inter_900Black,
+    AmaticRegular: AmaticSC_400Regular,
+    AmaticBold: AmaticSC_700Bold 
   });
 
   useEffect(() => {
@@ -26,12 +31,14 @@ export default function RootLayout() {
     return null;
   }
 
+
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <GestureHandlerRootView style={{flex: 1}}>
+      <Stack  screenOptions={{headerShown: false}}>
+        <Stack.Screen name="index" />
       </Stack>
+      </GestureHandlerRootView>
     </ThemeProvider>
   );
 }
