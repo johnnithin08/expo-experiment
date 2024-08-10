@@ -1,6 +1,6 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 // import { useFonts, In } from 'expo-font';
-import { Inter_900Black, useFonts } from '@expo-google-fonts/inter';
+import { Inter_400Regular, Inter_600SemiBold, Inter_900Black, useFonts } from '@expo-google-fonts/inter';
 import { AmaticSC_400Regular, AmaticSC_700Bold} from '@expo-google-fonts/amatic-sc';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -17,6 +17,8 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     InterBlack: Inter_900Black,
+    InterSemi: Inter_600SemiBold,
+    Inter: Inter_400Regular,
     AmaticRegular: AmaticSC_400Regular,
     AmaticBold: AmaticSC_700Bold 
   });
