@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "lat": 51.454513,
+        "long": -2.58791,
+        "price": 120,
+        "title": "Cozy Studio in the Heart of Bristol",
+        "stars": 4.8,
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161f3720e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "A cozy and comfortable studio located in the vibrant heart of Bristol. Perfect for solo travelers or couples looking to explore the city."
+    },
+    {
+        "id": 2,
+        "lat": 51.464153,
+        "long": -2.61258,
+        "price": 150,
+        "title": "Modern Apartment with River Views",
+        "stars": 4.7,
+        "rating": 4.7,
+        "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "A sleek, modern apartment offering stunning river views. Ideal for those who appreciate style and convenience."
+    },
+    {
+        "id": 3,
+        "lat": 51.45797,
+        "long": -2.59355,
+        "price": 95,
+        "title": "Charming Loft in City Center",
+        "stars": 4.6,
+        "rating": 4.6,
+        "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "A charming loft in the city center with easy access to Bristol's best attractions. Perfect for a weekend getaway."
+    },
+    {
+        "id": 4,
+        "lat": 51.450353,
+        "long": -2.59692,
+        "price": 180,
+        "title": "Luxurious Penthouse with Balcony",
+        "stars": 4.9,
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1600573471667-1560915e9f4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "Experience luxury in this penthouse apartment featuring a spacious balcony. Perfect for those looking to indulge during their stay."
+    },
+    {
+        "id": 5,
+        "lat": 51.453098,
+        "long": -2.60822,
+        "price": 110,
+        "title": "Stylish 1-Bedroom Flat near Harbor",
+        "stars": 4.7,
+        "rating": 4.7,
+        "image": "https://images.unsplash.com/photo-1598928506312-9dbaff7b23a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "A stylish and modern 1-bedroom flat located near the harbor. Perfect for travelers who enjoy scenic walks and vibrant nightlife."
+    },
+    {
+        "id": 6,
+        "lat": 51.468722,
+        "long": -2.61407,
+        "price": 125,
+        "title": "Spacious 2-Bedroom with Garden",
+        "stars": 4.8,
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1598300055523-31c4c17e92a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "A spacious 2-bedroom apartment with a private garden. Ideal for families or groups seeking a relaxing stay in Bristol."
+    },
+    {
+        "id": 7,
+        "lat": 51.459233,
+        "long": -2.58218,
+        "price": 140,
+        "title": "Contemporary Apartment in Clifton",
+        "stars": 4.9,
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1600585154255-6ab56870d6a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "A contemporary apartment located in the trendy Clifton area. A great choice for those wanting to explore Bristol's cultural scene."
+    },
+    {
+        "id": 8,
+        "lat": 51.463283,
+        "long": -2.57557,
+        "price": 130,
+        "title": "Bright Flat with City Views",
+        "stars": 4.6,
+        "rating": 4.6,
+        "image": "https://images.unsplash.com/photo-1567016545361-599d1cb2577f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "A bright and airy flat offering stunning views of the city. Perfect for those who enjoy modern amenities and a central location."
+    },
+    {
+        "id": 9,
+        "lat": 51.456675,
+        "long": -2.60339,
+        "price": 100,
+        "title": "Quaint Cottage in Quiet Neighborhood",
+        "stars": 4.7,
+        "rating": 4.7,
+        "image": "https://images.unsplash.com/photo-1618222045111-7d6f26c4c8a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "A quaint cottage located in a peaceful neighborhood. Ideal for travelers seeking tranquility and a homey atmosphere."
+    },
+    {
+        "id": 10,
+        "lat": 51.449592,
+        "long": -2.61549,
+        "price": 160,
+        "title": "Elegant Suite near Cabot Circus",
+        "stars": 4.8,
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1600585153929-9a3c8d44c89f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        "description": "An elegant suite located near Cabot Circus, perfect for shopping enthusiasts and those who enjoy luxury accommodations."
+    }
+]
