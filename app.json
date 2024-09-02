@@ -34,6 +34,12 @@
                 {
                     "microphonePermission": "Allow app to access your microphone."
                 }
+            ],
+            [
+                "expo-location",
+                {
+                    "locationAlwaysAndWhenInUsePermission": "Allow app to use your location."
+                }
             ]
         ],
         "experiments": {
