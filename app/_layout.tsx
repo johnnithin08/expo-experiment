@@ -7,8 +7,11 @@ import {
     useFonts,
 } from "@expo-google-fonts/inter";
 import { AmaticSC_400Regular, AmaticSC_700Bold } from "@expo-google-fonts/amatic-sc";
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react-native";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
+import { Amplify } from "aws-amplify";
+import outputs from "../amplify_outputs.json";
 import { useEffect, useState } from "react";
 import "react-native-reanimated";
 
@@ -31,6 +34,8 @@ import Animated, {
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 // SplashScreen.preventAutoHideAsync();
 const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
+
+Amplify.configure(outputs);
 
 export default function RootLayout() {
     const [appReady, setAppReady] = useState<boolean>(false);
@@ -80,13 +85,17 @@ export default function RootLayout() {
 
     return (
         <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <Animated.View style={{ flex: 1 }} entering={FadeIn}>
-                    <Stack screenOptions={{ headerShown: false }}>
-                        <Stack.Screen name="index" />
-                    </Stack>
-                </Animated.View>
-            </GestureHandlerRootView>
+            <Authenticator.Provider>
+                <Authenticator>
+                    <GestureHandlerRootView style={{ flex: 1 }}>
+                        <Animated.View style={{ flex: 1 }} entering={FadeIn}>
+                            <Stack screenOptions={{ headerShown: false }}>
+                                <Stack.Screen name="index" />
+                            </Stack>
+                        </Animated.View>
+                    </GestureHandlerRootView>
+                </Authenticator>
+            </Authenticator.Provider>
         </ThemeProvider>
     );
 }
