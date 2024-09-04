@@ -17,6 +17,7 @@ const Day8 = () => {
             <Text>Day 9</Text>
             <MarkdownDisplay>{description}</MarkdownDisplay>
             <Button title="Go To AWS Auth" onPress={() => router.push("/day9/protected")} />
+            <Button title="Go To Sign In" onPress={() => router.push("/day9/auth/sign-in")} />
         </SafeAreaView>
     );
 };

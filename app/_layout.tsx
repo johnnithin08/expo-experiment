@@ -1,4 +1,4 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from "@react-navigation/native";
+import { DarkTheme, DefaultTheme } from "@react-navigation/native";
 // import { useFonts, In } from 'expo-font';
 import {
     Inter_400Regular,
@@ -7,7 +7,7 @@ import {
     useFonts,
 } from "@expo-google-fonts/inter";
 import { AmaticSC_400Regular, AmaticSC_700Bold } from "@expo-google-fonts/amatic-sc";
-import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react-native";
+import { ThemeProvider } from "@aws-amplify/ui-react-native";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { Amplify } from "aws-amplify";
@@ -83,19 +83,25 @@ export default function RootLayout() {
         );
     }
 
+    const theme = {
+        tokens: {
+            colors: {
+                font: {
+                    primary: "black",
+                },
+            },
+        },
+    };
+
     return (
-        <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-            <Authenticator.Provider>
-                <Authenticator>
-                    <GestureHandlerRootView style={{ flex: 1 }}>
-                        <Animated.View style={{ flex: 1 }} entering={FadeIn}>
-                            <Stack screenOptions={{ headerShown: false }}>
-                                <Stack.Screen name="index" />
-                            </Stack>
-                        </Animated.View>
-                    </GestureHandlerRootView>
-                </Authenticator>
-            </Authenticator.Provider>
+        <ThemeProvider theme={theme}>
+            <GestureHandlerRootView style={{ flex: 1 }}>
+                <Animated.View style={{ flex: 1 }} entering={FadeIn}>
+                    <Stack screenOptions={{ headerShown: false }}>
+                        <Stack.Screen name="index" />
+                    </Stack>
+                </Animated.View>
+            </GestureHandlerRootView>
         </ThemeProvider>
     );
 }
