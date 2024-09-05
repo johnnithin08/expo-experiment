@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ViewStyle, TextStyle, Button } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import { signIn } from "aws-amplify/auth";
+import { signIn, signUp } from "aws-amplify/auth";
 import { Link, router } from "expo-router";
 
 interface IUserData {
@@ -10,16 +10,16 @@ interface IUserData {
     password: string;
 }
 
-const SignIn = () => {
+const SignUp = () => {
     const [userData, setUserData] = useState<IUserData>({ email: "", password: "" });
 
-    const handleSignIn = async () => {
-        const { isSignedIn } = await signIn({
+    const handleSignUp = async () => {
+        const { isSignUpComplete } = await signUp({
             username: userData.email,
             password: userData.password,
         });
-        if (isSignedIn) {
-            router.navigate("/(days)/day9/protected");
+        if (isSignUpComplete) {
+            router.navigate("/(days)/day9/auth/sign-in");
         }
     };
 
@@ -45,7 +45,7 @@ const SignIn = () => {
     };
     return (
         <SafeAreaView style={containerStyle}>
-            <Text style={titleStyle}>Sign In</Text>
+            <Text style={titleStyle}>Sign Up</Text>
             <TextInput
                 onChangeText={(email) => setUserData({ ...userData, email })}
                 placeholder="Email"
@@ -56,10 +56,10 @@ const SignIn = () => {
                 onChangeText={(password) => setUserData({ ...userData, password })}
                 style={inputStyle}
             />
-            <Button onPress={handleSignIn} title="Sign In" />
-            <Link href="/(days)/day9/auth/sign-up">Create a new account</Link>
+            <Button onPress={handleSignUp} title="Sign Up" />
+            <Link href={"/day9/auth/sign-in"}>Already have an account? Sign In</Link>
         </SafeAreaView>
     );
 };
 
-export default SignIn;
+export default SignUp;

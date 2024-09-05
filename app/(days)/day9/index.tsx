@@ -16,8 +16,8 @@ const Day8 = () => {
             <Stack.Screen options={{ title: "Day 9: AWS Auth", headerShown: true }} />
             <Text>Day 9</Text>
             <MarkdownDisplay>{description}</MarkdownDisplay>
-            <Button title="Go To AWS Auth" onPress={() => router.push("/day9/protected")} />
-            <Button title="Go To Sign In" onPress={() => router.push("/day9/auth/sign-in")} />
+            <Button title="Go To Protected" onPress={() => router.push("/day9/protected")} />
+            {/* <Button title="Go To Sign In" onPress={() => router.push("/day9/auth/sign-in")} /> */}
         </SafeAreaView>
     );
 };

@@ -7,7 +7,7 @@ import {
     useFonts,
 } from "@expo-google-fonts/inter";
 import { AmaticSC_400Regular, AmaticSC_700Bold } from "@expo-google-fonts/amatic-sc";
-import { ThemeProvider } from "@aws-amplify/ui-react-native";
+import { Authenticator, ThemeProvider } from "@aws-amplify/ui-react-native";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { Amplify } from "aws-amplify";
@@ -96,11 +96,13 @@ export default function RootLayout() {
     return (
         <ThemeProvider theme={theme}>
             <GestureHandlerRootView style={{ flex: 1 }}>
-                <Animated.View style={{ flex: 1 }} entering={FadeIn}>
-                    <Stack screenOptions={{ headerShown: false }}>
-                        <Stack.Screen name="index" />
-                    </Stack>
-                </Animated.View>
+                <Authenticator.Provider>
+                    <Animated.View style={{ flex: 1 }} entering={FadeIn}>
+                        <Stack screenOptions={{ headerShown: false }}>
+                            <Stack.Screen name="index" />
+                        </Stack>
+                    </Animated.View>
+                </Authenticator.Provider>
             </GestureHandlerRootView>
         </ThemeProvider>
     );
