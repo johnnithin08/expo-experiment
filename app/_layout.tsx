@@ -1,4 +1,4 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from "@react-navigation/native";
+import { DarkTheme, DefaultTheme } from "@react-navigation/native";
 // import { useFonts, In } from 'expo-font';
 import {
     Inter_400Regular,
@@ -7,8 +7,11 @@ import {
     useFonts,
 } from "@expo-google-fonts/inter";
 import { AmaticSC_400Regular, AmaticSC_700Bold } from "@expo-google-fonts/amatic-sc";
+import { Authenticator, ThemeProvider } from "@aws-amplify/ui-react-native";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
+import { Amplify } from "aws-amplify";
+import outputs from "../amplify_outputs.json";
 import { useEffect, useState } from "react";
 import "react-native-reanimated";
 
@@ -31,6 +34,8 @@ import Animated, {
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 // SplashScreen.preventAutoHideAsync();
 const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
+
+Amplify.configure(outputs);
 
 export default function RootLayout() {
     const [appReady, setAppReady] = useState<boolean>(false);
@@ -78,14 +83,26 @@ export default function RootLayout() {
         );
     }
 
+    const theme = {
+        tokens: {
+            colors: {
+                font: {
+                    primary: "black",
+                },
+            },
+        },
+    };
+
     return (
-        <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <ThemeProvider theme={theme}>
             <GestureHandlerRootView style={{ flex: 1 }}>
-                <Animated.View style={{ flex: 1 }} entering={FadeIn}>
-                    <Stack screenOptions={{ headerShown: false }}>
-                        <Stack.Screen name="index" />
-                    </Stack>
-                </Animated.View>
+                <Authenticator.Provider>
+                    <Animated.View style={{ flex: 1 }} entering={FadeIn}>
+                        <Stack screenOptions={{ headerShown: false }}>
+                            <Stack.Screen name="index" />
+                        </Stack>
+                    </Animated.View>
+                </Authenticator.Provider>
             </GestureHandlerRootView>
         </ThemeProvider>
     );
