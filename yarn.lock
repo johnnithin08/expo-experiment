@@ -9509,6 +9509,13 @@ expo-linking@~6.3.1:
     expo-constants "~16.0.0"
     invariant "^2.2.4"
 
+expo-local-authentication@~14.0.1:
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/expo-local-authentication/-/expo-local-authentication-14.0.1.tgz#0cad7f419d4694e1c205f589cdf355f2f2b3a2b4"
+  integrity sha512-kAwUD1wEqj1fhwQgIHlP4H/JV9AcX+NO3BJwhPM2HuCFS0kgx2wvcHisnKBSTRyl8u5Jt4odzMyQkDJystwUTg==
+  dependencies:
+    invariant "^2.2.4"
+
 expo-location@~17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-17.0.1.tgz#3bdbf91066f1a40ec3468dc1807f3e106473f74c"
@@ -15495,6 +15502,7 @@ wordwrap@^1.0.0:
   integrity sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==

@@ -13,7 +13,8 @@
       "backgroundColor": "#000000"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.johnnithin08.expoexperiment"
     },
     "android": {
       "adaptiveIcon": {
@@ -46,6 +47,12 @@
         "expo-location",
         {
           "locationAlwaysAndWhenInUsePermission": "Allow app to use your location."
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow app to use Face ID."
         }
       ]
     ],
