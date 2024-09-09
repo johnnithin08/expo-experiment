@@ -30,6 +30,7 @@ import Animated, {
     SlideOutUp,
     ZoomOut,
 } from "react-native-reanimated";
+import { BiometricProvider } from "@/src/components/BiometricProvider";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 // SplashScreen.preventAutoHideAsync();
@@ -94,16 +95,18 @@ export default function RootLayout() {
     };
 
     return (
-        <ThemeProvider theme={theme}>
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <Authenticator.Provider>
-                    <Animated.View style={{ flex: 1 }} entering={FadeIn}>
-                        <Stack screenOptions={{ headerShown: false }}>
-                            <Stack.Screen name="index" />
-                        </Stack>
-                    </Animated.View>
-                </Authenticator.Provider>
-            </GestureHandlerRootView>
-        </ThemeProvider>
+        <BiometricProvider>
+            <ThemeProvider theme={theme}>
+                <GestureHandlerRootView style={{ flex: 1 }}>
+                    <Authenticator.Provider>
+                        <Animated.View style={{ flex: 1 }} entering={FadeIn}>
+                            <Stack screenOptions={{ headerShown: false }}>
+                                <Stack.Screen name="index" />
+                            </Stack>
+                        </Animated.View>
+                    </Authenticator.Provider>
+                </GestureHandlerRootView>
+            </ThemeProvider>
+        </BiometricProvider>
     );
 }
