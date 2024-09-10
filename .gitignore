@@ -23,3 +23,6 @@ expo-env.d.ts
 .amplify
 amplify_outputs*
 amplifyconfiguration*
+
+ios/
+android/
