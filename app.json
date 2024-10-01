@@ -35,7 +35,8 @@
                 "android.permission.USE_FINGERPRINT",
                 "android.permission.CAMERA"
             ],
-            "package": "com.johnnithin08.expoexperiment"
+            "package": "com.johnnithin08.expoexperiment",
+            "softwareKeyboardLayoutMode": "pan"
         },
         "web": {
             "bundler": "metro",
