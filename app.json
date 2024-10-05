@@ -14,9 +14,14 @@
         },
         "ios": {
             "supportsTablet": true,
-            "bundleIdentifier": "com.johnnithin08.expoexperiment"
+            "bundleIdentifier": "com.johnnithin08.expoexperiment",
+            "infoPlist": {
+                "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera.",
+                "NSMicrophoneUsageDescription": "$(PRODUCT_NAME) needs access to your Microphone."
+            }
         },
         "android": {
+            "googleServicesFile": "./google-services.json",
             "adaptiveIcon": {
                 "foregroundImage": "./assets/images/adaptive-icon.png",
                 "backgroundColor": "#ffffff"
@@ -25,9 +30,13 @@
                 "android.permission.RECORD_AUDIO",
                 "android.permission.MODIFY_AUDIO_SETTINGS",
                 "android.permission.ACCESS_COARSE_LOCATION",
-                "android.permission.ACCESS_FINE_LOCATION"
+                "android.permission.ACCESS_FINE_LOCATION",
+                "android.permission.USE_BIOMETRIC",
+                "android.permission.USE_FINGERPRINT",
+                "android.permission.CAMERA"
             ],
-            "package": "com.johnnithin08.expoexperiment"
+            "package": "com.johnnithin08.expoexperiment",
+            "softwareKeyboardLayoutMode": "pan"
         },
         "web": {
             "bundler": "metro",
@@ -76,6 +85,12 @@
                 "projectId": "861eccf8-e2d2-4fde-b1e9-2cf9b5f9bf6e"
             }
         },
-        "owner": "johnnithin08"
+        "owner": "johnnithin08",
+        "runtimeVersion": {
+            "policy": "appVersion"
+        },
+        "updates": {
+            "url": "https://u.expo.dev/861eccf8-e2d2-4fde-b1e9-2cf9b5f9bf6e"
+        }
     }
 }
