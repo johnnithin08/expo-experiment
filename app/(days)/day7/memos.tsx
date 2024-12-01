@@ -3,7 +3,7 @@ import { View, Text, Button, Pressable, ViewStyle, StyleSheet } from "react-nati
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Audio } from "expo-av";
 import { Recording } from "expo-av/build/Audio";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList } from "react-native";
 import Animated, {
     interpolate,
     useAnimatedStyle,

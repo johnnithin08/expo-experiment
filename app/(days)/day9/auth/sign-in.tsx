@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ViewStyle, TextStyle, Button } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { TextInput } from "react-native";
 import { signIn } from "aws-amplify/auth";
 import { Link, router } from "expo-router";
 

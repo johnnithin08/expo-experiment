@@ -14,6 +14,7 @@ import { Amplify } from "aws-amplify";
 import outputs from "../amplify_outputs.json";
 import { useEffect, useState } from "react";
 import "react-native-reanimated";
+import { vexo } from "vexo-analytics";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -37,6 +38,8 @@ import { BiometricProvider } from "@/src/components/BiometricProvider";
 const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
 
 Amplify.configure(outputs);
+
+vexo(process.env.EXPO_PUBLIC_VEXO_API_KEY ?? "");
 
 export default function RootLayout() {
     const [appReady, setAppReady] = useState<boolean>(false);
