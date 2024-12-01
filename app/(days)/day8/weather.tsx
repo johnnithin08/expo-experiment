@@ -10,7 +10,7 @@ import {
     StyleSheet,
 } from "react-native";
 import * as Location from "expo-location";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList } from "react-native";
 import { ForecastItem } from "@/src/components/ForecastItem";
 import LottieView from "lottie-react-native";
 

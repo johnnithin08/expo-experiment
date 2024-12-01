@@ -5,6 +5,7 @@ import { Swipeable } from "react-native-gesture-handler";
 import Reanimated, { JumpingTransition } from "react-native-reanimated";
 import { TTask, useTasks } from "./TasksContextProvider";
 import { useTasksStore } from "./TasksStore";
+import { customEvent } from "vexo-analytics";
 
 const AnimatedView = Animated.createAnimatedComponent(View);
 const ReanimatedView = Reanimated.createAnimatedComponent(View);
@@ -67,7 +68,14 @@ export const TaskListItem: FunctionComponent<ITaskListItem> = ({ index, item }: 
                         handleDelete={() => onDelete(item.id)}
                     />
                 )}>
-                <Pressable onPress={() => onItemPressed(item.id)} style={taskContainer}>
+                <Pressable
+                    onPress={() => {
+                        customEvent("todo-press", {
+                            complete: !item.isFinished,
+                        });
+                        onItemPressed(item.id);
+                    }}
+                    style={taskContainer}>
                     <MaterialCommunityIcons
                         name={
                             item.isFinished

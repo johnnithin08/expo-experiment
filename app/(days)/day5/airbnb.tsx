@@ -8,7 +8,7 @@ import BottomSheet, { BottomSheetView, BottomSheetFlatList } from "@gorhom/botto
 import apartments from "@assets/data/day5/apartments.json";
 import { CustomMarker } from "@/src/components/CustomMarker";
 import { ApartmentListItem } from "@/src/components/ApartmentListItem";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList } from "react-native";
 
 const initalRegion = {
     latitude: 51.464153,
